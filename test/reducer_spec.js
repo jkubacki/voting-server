@@ -14,7 +14,7 @@ describe('reducer', () => {
   });
 
   it('handles NEXT', () => {
-    const initialState = Map({
+    const initialState = fromJS({
       entries: ['Trainspotting', '28 Days Later']
     });
     const action = {type: 'NEXT'}
@@ -22,7 +22,8 @@ describe('reducer', () => {
     expect(nextState).to.equal(fromJS({
       vote: {
         pair: ['Trainspotting', '28 Days Later']
-      }
+      },
+      entries: []
     }));
   });
 });
